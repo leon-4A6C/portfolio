@@ -5,6 +5,8 @@ import "./index.css";
 
 import Router from "./Router";
 
+import LandingView from "./views/LandingView";
+
 import lightTheme from "./themes/light";
 
 export default class App extends Component {
@@ -14,7 +16,26 @@ export default class App extends Component {
                 <BrowserRouter>
                     <div>
                         <Route path="/" exact render={() => <Redirect to="/home" />} />
-                        <Route path="/:id" component={Router} />
+                        <Route path="/:slug" render={(e) => <Router {...e} pages={
+                            [
+                                {
+                                    "path": "/home",
+                                    "view": LandingView
+                                },
+                                {
+                                    "path": "/projects",
+                                    "view": LandingView
+                                },
+                                {
+                                    "path": "/about",
+                                    "view": LandingView
+                                },
+                                {
+                                    "path": "/dinges",
+                                    "view": LandingView
+                                },
+                            ]
+                        } />} />
                     </div>
                 </BrowserRouter>
             </ThemeProvider>
