@@ -7,6 +7,7 @@ export default {
         secondary: "#EE5A24",
     },
     font: {
-        primary: "'Righteous', cursive"
+        primary: "'Raleway', sans-serif",
+        secondary: "'Righteous', cursive",
     }
 }

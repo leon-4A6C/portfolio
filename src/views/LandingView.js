@@ -7,7 +7,7 @@ import { flyIn } from '../components/animations/fly'
 import { floatY } from '../components/animations/float'
 
 const H1 = styled.h1`
-  font-family: ${({ theme }) => theme.font.primary};
+  font-family: ${({ theme }) => theme.font.secondary};
   font-size: 15em;
   transition: all 300ms;
   text-align: center;

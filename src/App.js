@@ -4,9 +4,10 @@ import { ThemeProvider } from "styled-components";
 import "./index.css";
 
 import Router from "./Router";
+import Navigation from "./components/Navigation";
 
 import LandingView from "./views/LandingView";
-import Navigation from "./components/Navigation";
+import ProjectsView from "./views/ProjectsView";
 
 import lightTheme from "./themes/light";
 
@@ -26,7 +27,7 @@ export default class App extends Component {
                                 },
                                 {
                                     "slug": "projects",
-                                    "view": LandingView
+                                    "view": ProjectsView
                                 },
                                 {
                                     "slug": "about",
