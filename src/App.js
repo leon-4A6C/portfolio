@@ -6,6 +6,7 @@ import "./index.css";
 import Router from "./Router";
 
 import LandingView from "./views/LandingView";
+import Navigation from "./components/Navigation";
 
 import lightTheme from "./themes/light";
 
@@ -15,6 +16,7 @@ export default class App extends Component {
             <ThemeProvider theme={lightTheme}>
                 <BrowserRouter>
                     <div>
+                        <Navigation />
                         <Route path="/" exact render={() => <Redirect to="/home" />} />
                         <Route path="/:slug" render={(e) => <Router {...e} pages={
                             [

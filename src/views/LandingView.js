@@ -77,16 +77,25 @@ const ShootingDiv = styled.div`
     ${({ offset }) => offset || '600ms'} ease-in-out;
 `
 
+const Wrapper = styled.div`
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  width: 100%;
+`
+
 export default class LandingView extends React.Component {
   render() {
     return (
       <Page id="home">
-        <H1>
-          <TransSpan time="600ms">léon in</TransSpan>
-          <ShootingDiv offset="900ms" />
-          <TransSpan>'t Veld</TransSpan>
-        </H1>
-        <H4 floatLength="0.3em">Developer. Designer. Awesome human being.</H4>
+        <Wrapper>
+          <H1>
+            <TransSpan time="600ms">léon in</TransSpan>
+            <ShootingDiv offset="900ms" />
+            <TransSpan>'t Veld</TransSpan>
+          </H1>
+          <H4 floatLength="0.3em">Developer. Designer. Awesome human being.</H4>
+        </Wrapper>
       </Page>
     )
   }

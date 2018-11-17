@@ -3,7 +3,7 @@ import Swipeable from 'react-swipeable'
 
 export default class Router extends React.Component {
 
-    scrollCount = 0;
+    scrollForce = 0;
 
     myRefs = {}
 
@@ -33,22 +33,23 @@ export default class Router extends React.Component {
     }
 
     handleScroll = (e) => {
-        if(this.scrollCount < 5) {
-            this.scrollCount++;
+        const threshold = 12;
+
+        this.scrollForce += e.deltaY;
+        if(this.scrollForce < threshold && this.scrollForce > -threshold) {
             return
         }
 
-        if(e.deltaY > 1) {
+        if(this.scrollForce > 0) {
             this.pageDown()
         } else {
             this.pageUp()
         }
 
-        this.scrollCount = 0;
+        this.scrollForce = 0;
     };
 
     pageDown = () => {
-
         const pages = this.props.pages.map(x => x.slug);
         const current = pages.indexOf(this.props.match.params.slug);
         if(current === pages.length-1)
