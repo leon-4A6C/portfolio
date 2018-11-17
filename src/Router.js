@@ -5,20 +5,18 @@ export default class Router extends React.Component {
 
     scrollCount = 0;
 
-    myrefs = {}
+    myRefs = {}
 
     constructor(props) {
         super(props);
 
         this.props.pages.forEach(page => {
-            this.myrefs[page.path] = React.createRef();
+            this.myRefs[page.slug] = React.createRef();
         });
     }
 
     componentDidUpdate(prevProps, prevState) {
-        console.log(prevProps.location, this.props.location)
-
-        if(this.props.location !== prevProps.location) {
+        if(this.props.match.params !== prevProps.match.params) {
             this.scrollToPath()
         }
     }
@@ -28,9 +26,8 @@ export default class Router extends React.Component {
     }
 
     scrollToPath() {
-        console.log("scroll!!", this.myrefs[this.props.location.pathname].current.offsetTop)
         window.scrollTo({
-            top: this.myrefs[this.props.location.pathname].current.offsetTop,
+            top: this.myRefs[this.props.match.params.slug].current.offsetTop,
             behavior: "smooth"
         })
     }
@@ -52,8 +49,8 @@ export default class Router extends React.Component {
 
     pageDown = () => {
 
-        const pages = this.props.pages.map(x => x.path);
-        const current = pages.indexOf(this.props.location.pathname);
+        const pages = this.props.pages.map(x => x.slug);
+        const current = pages.indexOf(this.props.match.params.slug);
         if(current === pages.length-1)
             return
         
@@ -62,8 +59,8 @@ export default class Router extends React.Component {
     }
 
     pageUp = () => {
-        const pages = this.props.pages.map(x => x.path);
-        const current = pages.indexOf(this.props.location.pathname);
+        const pages = this.props.pages.map(x => x.slug);
+        const current = pages.indexOf(this.props.match.params.slug);
         if(current === 0)
             return
 
@@ -75,7 +72,7 @@ export default class Router extends React.Component {
             <div onWheel={this.handleScroll}>
                 <Swipeable onSwipedUp={this.pageDown} onSwipedDown={this.pageUp}>
                     {
-                        this.props.pages.map(p => (<div key={p.path} ref={this.myrefs[p.path]}><p.view /></div>))
+                        this.props.pages.map(p => (<div key={p.slug} ref={this.myRefs[p.slug]}><p.view /></div>))
                     }
                 </Swipeable>
             </div>

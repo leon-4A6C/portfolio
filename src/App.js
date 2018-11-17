@@ -19,19 +19,19 @@ export default class App extends Component {
                         <Route path="/:slug" render={(e) => <Router {...e} pages={
                             [
                                 {
-                                    "path": "/home",
+                                    "slug": "home",
                                     "view": LandingView
                                 },
                                 {
-                                    "path": "/projects",
+                                    "slug": "projects",
                                     "view": LandingView
                                 },
                                 {
-                                    "path": "/about",
+                                    "slug": "about",
                                     "view": LandingView
                                 },
                                 {
-                                    "path": "/dinges",
+                                    "slug": "dinges",
                                     "view": LandingView
                                 },
                             ]
