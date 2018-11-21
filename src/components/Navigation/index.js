@@ -21,10 +21,10 @@ export default class Navigation extends React.Component {
         return(
             <Nav>
                 <Ul>
-                    <NavigationItem to="/home" />
-                    <NavigationItem to="/projects" />
-                    <NavigationItem to="/about" />
-                    <NavigationItem to="/dinges" />
+                    <NavigationItem offset="0ms" to="/home" />
+                    <NavigationItem offset="300ms" to="/projects" />
+                    <NavigationItem offset="600ms" to="/about" />
+                    <NavigationItem offset="900ms" to="/dinges" />
                 </Ul>
             </Nav>
         )

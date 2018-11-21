@@ -1,6 +1,8 @@
 import React from "react";
 import {Link, Route} from "react-router-dom";
 import styled from "styled-components";
+import {flyRight} from "../animations/fly"
+import {fadeIn} from "../animations/fade"
 
 const Circle = styled.div`
     position: relative;
@@ -37,6 +39,13 @@ const Circle = styled.div`
     &:hover {
         transform: scale(1.1);
     }
+
+    opacity: 0;
+    animation: 
+        ${flyRight} ${({ time }) => time || '600ms'}
+        ${({ offset }) => offset || '600ms'} ease-in-out,
+        ${fadeIn} ${({ time }) => time || '600ms'}
+        ${({ offset }) => offset || '600ms'} ease-in forwards;
 `
 
 export default class NavigationItem extends React.Component {
@@ -49,7 +58,7 @@ export default class NavigationItem extends React.Component {
             children={({ match }) => (
                 <li>
                     <Link to={to}>
-                        <Circle active={match} />
+                        <Circle time={this.props.time} offset={this.props.offset} active={match} />
                     </Link>
                 </li>
             )}

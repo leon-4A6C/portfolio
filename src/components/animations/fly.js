@@ -35,3 +35,20 @@ to {
   transform: translateY(100%);
 }
 `
+export const flyLeft = keyframes`
+from {
+  transform: translateX(-100%);
+}
+to {
+  transform: translateX(0%);
+}
+`
+
+export const flyRight = keyframes`
+from {
+  transform: translateX(100%);
+}
+to {
+  transform: translateX(0%);
+}
+`
