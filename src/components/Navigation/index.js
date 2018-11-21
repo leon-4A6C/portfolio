@@ -17,7 +17,6 @@ const Ul = styled.ul`
 
 export default class Navigation extends React.Component {
     render() {
-        console.log(this.props)
         return(
             <Nav>
                 <Ul>
