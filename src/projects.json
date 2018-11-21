@@ -1,0 +1,24 @@
+[
+    {
+        "name": "gameplay party",
+        "description": "A site where you can rent a movie theater to game",
+        "date": "2018-10-10",
+        "group": 3,
+        "skills": [
+            "js",
+            "html",
+            "sass"
+        ],
+        "buttons": [
+            {
+                "name": "github",
+                "url": "https://github.com/leon-4A6C/gameplay_party"
+            },
+            {
+                "name": "link",
+                "url": "https://gameplayparty.leonintveld.com/"
+            }
+        ],
+        "img": "gameplay_party.jpg"
+    }
+]
