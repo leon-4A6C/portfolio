@@ -73,7 +73,7 @@ export default class Router extends React.Component {
             <div onWheel={this.handleScroll}>
                 <Swipeable onSwipedUp={this.pageDown} onSwipedDown={this.pageUp}>
                     {
-                        this.props.pages.map(p => (<div key={p.slug} ref={this.myRefs[p.slug]}><p.view /></div>))
+                        this.props.pages.map(p => (<div key={p.slug} ref={this.myRefs[p.slug]}><p.view active={p.slug === this.props.match.params.slug} /></div>))
                     }
                 </Swipeable>
             </div>
