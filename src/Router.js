@@ -4,6 +4,7 @@ import Swipeable from 'react-swipeable'
 export default class Router extends React.Component {
 
     scrollForce = 0;
+    lastScoll = new Date();
 
     myRefs = {}
 
@@ -33,13 +34,16 @@ export default class Router extends React.Component {
     }
 
     handleScroll = (e) => {
-        const threshold = 12;
+        const forceThreshold = 12;
+        const timeThreshold = 250;
 
         this.scrollForce += e.deltaY;
-        if(this.scrollForce < threshold && this.scrollForce > -threshold) {
+        const now = new Date();
+
+        if((this.scrollForce < forceThreshold && this.scrollForce > -forceThreshold) || ((now - this.lastScoll) < timeThreshold)) {
             return
         }
-
+        this.lastScoll = now;
         if(this.scrollForce > 0) {
             this.pageDown()
         } else {
