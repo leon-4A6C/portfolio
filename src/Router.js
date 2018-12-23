@@ -1,9 +1,7 @@
 import React from "react";
-import Swipeable from 'react-swipeable'
+import scrollTo from "./scrollTo";
 
 export default class Router extends React.Component {
-
-    lastScroll = new Date();
 
     myRefs = {}
 
@@ -23,30 +21,41 @@ export default class Router extends React.Component {
 
     componentDidMount() {
         this.scrollToPath()
+
+        this.addListener();
+    }
+
+    addListener() {
+        window.addEventListener("scroll", this.handleScroll)
+    }
+
+    removeListener() {
+        window.removeEventListener("scroll", this.handleScroll);
     }
 
     scrollToPath() {
-        window.scrollTo({
-            top: this.myRefs[this.props.match.params.slug].current.offsetTop,
-            behavior: "smooth"
-        })
+        this.removeListener()
+        scrollTo(
+            this.myRefs[this.props.match.params.slug].current.offsetTop,
+            () => {
+                setTimeout(() => {
+                    this.addListener()
+                }, 50)
+            },
+            500
+        )
     }
 
     handleScroll = (e) => {
-        const timeThreshold = 250;
+        const currentPage = this.myRefs[this.props.match.params.slug];
+        const rect = currentPage.current.getBoundingClientRect();
 
-        const now = new Date();
-
-        if((now - this.lastScroll) < timeThreshold) {
-            return
+        if(rect.top > 0) {
+            this.pageUp();
+        } else if((rect.bottom - window.innerHeight) < 0) {
+            this.pageDown();
         }
-        this.lastScroll = now;
 
-        if(e.deltaY > 0) {
-            this.pageDown()
-        } else {
-            this.pageUp()
-        }
     };
 
     pageDown = () => {
@@ -70,12 +79,10 @@ export default class Router extends React.Component {
 
     render() {
         return (
-            <div onWheel={this.handleScroll}>
-                <Swipeable onSwipedUp={this.pageDown} onSwipedDown={this.pageUp}>
-                    {
-                        this.props.pages.map(p => (<div key={p.slug} ref={this.myRefs[p.slug]}><p.view active={p.slug === this.props.match.params.slug} /></div>))
-                    }
-                </Swipeable>
+            <div>
+                {
+                    this.props.pages.map(p => (<div key={p.slug} ref={this.myRefs[p.slug]}><p.view active={p.slug === this.props.match.params.slug} /></div>))
+                }
             </div>
         )
     }
