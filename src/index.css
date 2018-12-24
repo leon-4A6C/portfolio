@@ -2,3 +2,7 @@ body {
     overflow-x: hidden;
     margin: 0;
 }
+
+*, *::before, *::after {
+    transition: color 300ms ease-in-out, background 300ms ease-in-out;
+}

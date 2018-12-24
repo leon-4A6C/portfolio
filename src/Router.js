@@ -17,12 +17,16 @@ export default class Router extends React.Component {
         if(this.props.match.params !== prevProps.match.params) {
             this.scrollToPath()
         }
+        const prev = this.props.pages.find(x => x.slug === prevProps.match.params.slug);
+        const current = this.props.pages.find(x => x.slug === this.props.match.params.slug);
+
+        if(prev.theme !== current.theme && this.props.themeChange) {
+            this.props.themeChange(current.theme);
+        }
     }
 
     componentDidMount() {
         this.scrollToPath()
-
-        this.addListener();
     }
 
     addListener() {

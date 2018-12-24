@@ -5,37 +5,57 @@ import "./index.css";
 
 import Router from "./Router";
 import Navigation from "./components/Navigation";
+import Logo from "./components/Logo"
 
 import LandingView from "./views/LandingView";
 import ProjectsView from "./views/ProjectsView";
 
-import lightTheme from "./themes/light";
+import themes from "./themes";
 
 export default class App extends Component {
+
+    state = {
+        color: themes["orange"]
+    }
+
+    setTheme = (theme) => {
+        this.setState({
+            color: theme
+        })
+    }
+
     render() {
+
+        const theme = {...themes, color: this.state.color}
+
         return (
-            <ThemeProvider theme={lightTheme}>
+            <ThemeProvider theme={theme}>
                 <BrowserRouter>
                     <div>
+                        <Logo />
                         <Navigation />
                         <Route path="/" exact render={() => <Redirect to="/home" />} />
-                        <Route path="/:slug" render={(e) => <Router {...e} pages={
+                        <Route path="/:slug" render={(e) => <Router {...e} themeChange={this.setTheme} pages={
                             [
                                 {
                                     "slug": "home",
-                                    "view": LandingView
+                                    "view": LandingView,
+                                    "theme": themes["orange"]
                                 },
                                 {
                                     "slug": "projects",
-                                    "view": ProjectsView
+                                    "view": ProjectsView,
+                                    "theme": themes["green"]
                                 },
                                 {
                                     "slug": "about",
-                                    "view": LandingView
+                                    "view": LandingView,
+                                    "theme": themes["orange"]
                                 },
                                 {
                                     "slug": "dinges",
-                                    "view": LandingView
+                                    "view": LandingView,
+                                    "theme": themes["green"]
                                 },
                             ]
                         } />} />

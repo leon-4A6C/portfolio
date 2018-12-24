@@ -11,14 +11,36 @@
         ],
         "buttons": [
             {
-                "name": "github",
+                "type": "github",
                 "url": "https://github.com/leon-4A6C/gameplay_party"
             },
             {
-                "name": "link",
+                "type": "link",
                 "url": "https://gameplayparty.leonintveld.com/"
             }
         ],
-        "img": "gameplay_party.jpg"
+        "img": "/img/projects/gameplay_party.jpg"
+    },
+    {
+        "title": "gameplay party",
+        "description": "A site where you can rent a movie theater to game",
+        "date": "2018-10-10",
+        "group": 3,
+        "skills": [
+            "js",
+            "html",
+            "sass"
+        ],
+        "buttons": [
+            {
+                "type": "github",
+                "url": "https://github.com/leon-4A6C/gameplay_party"
+            },
+            {
+                "type": "link",
+                "url": "https://gameplayparty.leonintveld.com/"
+            }
+        ],
+        "img": "/img/projects/gameplay_party.jpg"
     }
 ]
