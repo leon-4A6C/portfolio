@@ -4,5 +4,5 @@ body {
 }
 
 *, *::before, *::after {
-    transition: color 300ms ease-in-out, background 300ms ease-in-out;
+    transition: color 600ms ease-in-out, background 600ms ease-in-out;
 }

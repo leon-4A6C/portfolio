@@ -15,14 +15,13 @@ const LogoBox = styled.div`
 const H2 = styled.h2`
     font-family: ${({ theme }) => theme.font.secondary};
     font-size: 4em;
-    transition: all 300ms;
     text-align: center;
     transform: skew(-10deg) rotateZ(-10deg);
     overflow: hidden;
     margin: 0;
     color: ${({theme}) => theme.color.text};
 
-    transition: text-shadow 0.12s ease-out translate 0.12s ease-out;
+    transition: text-shadow 300ms ease-out, transform 300ms ease-out;
     &:hover {
         transform: translateX(6px) translateY(-6px) skew(-10deg) rotateZ(-10deg);
         text-shadow: -1px 1px ${({theme}) => theme.color.bg},

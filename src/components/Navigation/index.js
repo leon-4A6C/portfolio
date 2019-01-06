@@ -20,10 +20,9 @@ export default class Navigation extends React.Component {
         return(
             <Nav>
                 <Ul>
-                    <NavigationItem offset="0ms" to="/home" />
-                    <NavigationItem offset="300ms" to="/projects" />
-                    <NavigationItem offset="600ms" to="/about" />
-                    <NavigationItem offset="900ms" to="/dinges" />
+                    {this.props.pages.map((x, i) => 
+                        <NavigationItem key={i} offset={ (300 * i) + "ms"} to={"/"+x.slug} />
+                    )}
                 </Ul>
             </Nav>
         )
