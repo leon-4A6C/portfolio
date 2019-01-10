@@ -1,6 +1,6 @@
 import styled, {css} from "styled-components";
 
-const oneTwelfth = 100/12;
+const ONE_TWELFTH = 100/12;
 
 const Col = styled.div`
     box-sizing: border-box;
@@ -10,31 +10,31 @@ const Col = styled.div`
     flex-grow: 1;
 
     ${({xs}) => xs ? css`
-    flex-basis: ${({xs}) => (oneTwelfth * xs)}%;
-    max-width: ${({xs}) => (oneTwelfth * xs)}%;
+    flex-basis: ${({xs}) => (ONE_TWELFTH * xs)}%;
+    max-width: ${({xs}) => (ONE_TWELFTH * xs)}%;
     flex-grow: initial;
     `:""}
 
     ${({sm}) => sm ? css`
     @media only screen and (min-width: 768px) {
-        flex-basis: ${({sm}) => (oneTwelfth * sm)}%;
-        max-width: ${({sm}) => (oneTwelfth * sm)}%;
+        flex-basis: ${({sm}) => (ONE_TWELFTH * sm)}%;
+        max-width: ${({sm}) => (ONE_TWELFTH * sm)}%;
         flex-grow: initial;
     }
     `:""}
 
     ${({md}) => md ? css`
     @media only screen and (min-width: 992px) {
-        flex-basis: ${({md}) => (oneTwelfth * md)}%;
-        max-width: ${({md}) => (oneTwelfth * md)}%;
+        flex-basis: ${({md}) => (ONE_TWELFTH * md)}%;
+        max-width: ${({md}) => (ONE_TWELFTH * md)}%;
         flex-grow: initial;
     }
     `:""}
 
     ${({lg}) => lg ? css`
     @media only screen and (min-width: 1200px) {
-        flex-basis: ${({lg}) => (oneTwelfth * lg)}%;
-        max-width: ${({lg}) => (oneTwelfth * lg)}%;
+        flex-basis: ${({lg}) => (ONE_TWELFTH * lg)}%;
+        max-width: ${({lg}) => (ONE_TWELFTH * lg)}%;
         flex-grow: initial;
     }
     `:""}

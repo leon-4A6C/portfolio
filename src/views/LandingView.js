@@ -90,7 +90,7 @@ export default class LandingView extends React.Component {
       <Page id="home">
         <Wrapper>
           <H1>
-            <TransSpan time="600ms">léon in</TransSpan>
+            <TransSpan time="600ms">Léon in</TransSpan>
             <ShootingDiv offset="900ms" />
             <TransSpan>'t Veld</TransSpan>
           </H1>

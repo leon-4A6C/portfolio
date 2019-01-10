@@ -16,7 +16,7 @@ const Circle = styled.div`
         margin: 1em;
         border-radius: 100%;
         
-        transition: transform 300ms ${({active}) => active ? "0ms" : "300ms"} ease-in-out;
+        transition: background 300ms ease-in-out, transform 300ms ${({active}) => active ? "0ms" : "300ms"} ease-in-out;
         transform: translateX(${({active}) => active ? "3em" : "0"});
     }
 
@@ -31,11 +31,11 @@ const Circle = styled.div`
         top: 0;
         left: 1em;
         
-        transition: transform 300ms ${({active}) => active ? "300ms" : "0ms"} ease-in-out;
+        transition: background 300ms ease-in-out, transform 300ms ${({active}) => active ? "300ms" : "0ms"} ease-in-out;
         transform: translateX(${({active}) => active ? "0" : "3em"});
     }
 
-    transition: transform 300ms ease-in-out;
+    transition: background 300ms ease-in-out, transform 300ms ease-in-out;
     &:hover {
         transform: scale(1.1);
     }
