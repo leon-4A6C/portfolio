@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Redirect } from "react-router-dom";
 import styled, { ThemeProvider } from "styled-components";
 import "./index.css";
 
-import Router from "./Router";
+import Router from "./components/Router";
 import Navigation from "./components/Navigation";
 import Logo from "./components/Logo"
 

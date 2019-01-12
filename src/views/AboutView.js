@@ -15,6 +15,10 @@ const HR = styled.hr`
     width: 50%;
     margin: 0;
 `
+const IMG = styled.img`
+    height: auto;
+    width: 100%;
+`
 
 export default class AboutView extends React.Component {
     render() {
@@ -22,6 +26,7 @@ export default class AboutView extends React.Component {
             <Page>
                 <Row>
                     <Col xs={12} sm={6}>
+                        <IMG src="http://placekitten.com/600/800" />
                     </Col>
                     <Col xs={12} sm={6}>
                         <H3>
