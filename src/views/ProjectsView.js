@@ -12,10 +12,14 @@ const H3 = styled.h3`
     font-size: 2rem;
 `
 
+const StyledPage = styled(Page)`
+    padding-bottom: 20em;
+`
+
 export default class ProjectsView extends React.Component {
     render() {
         return (
-            <Page>
+            <StyledPage>
                 <H3>
                     Stuff I've made
                 </H3>
@@ -30,7 +34,7 @@ export default class ProjectsView extends React.Component {
                         </Col>
                     )}
                 </Row>
-            </Page>
+            </StyledPage>
         )
     }
 }

@@ -1,35 +1,41 @@
 import React from "react";
 import styled from "styled-components"
 
-import {Card, CardTitle, CardHeader, CardBody} from "../components/Card"
+const Info = styled.div`
+    width: 100%;
+    height: 100%;
 
-const StyledCard = styled(Card)`
+    transform: translateY(20em);
+    transition: 300ms ease-in-out;
+
+    background: #153243;
+    color: white;
+    position: absolute;
+`
+
+const ProjectWrapper = styled.div`
+    /* overflow: hidden; */
+    height: 20em;
     margin: 1em;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+
+    &:hover ${Info} {
+        transform: translateY(0);
+    }
 `
 
 export default class Project extends React.Component {
 
     render() {
         return (
-            <StyledCard>
-                <CardHeader>
-                    <CardTitle>{this.props.title}</CardTitle>
-                </CardHeader>
-                <CardBody>
-                    <div>
-                        {this.props.skills.map((x, i) => <i key={i} className={"fab fa-" + x} />)}
-                    </div>
-                    <div>
-                        {this.props.group}<i className="fa fa-users" />
-                    </div>
-                    <div>
-                        {this.props.description}
-                    </div>
-                    <div>
-                        
-                    </div>
-                </CardBody>
-            </StyledCard>
+            <ProjectWrapper style={{backgroundImage: "url("+this.props.img+")"}}>
+                <Info>
+                    <h1>{this.props.title}</h1>
+                </Info>
+            </ProjectWrapper>
         )
     }
 

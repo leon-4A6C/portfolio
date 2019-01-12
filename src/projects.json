@@ -2,6 +2,7 @@
     {
         "title": "gameplay party",
         "description": "A site where you can rent a movie theater to game",
+        "type": "school",
         "date": "2018-10-10",
         "group": 3,
         "skills": [
@@ -22,25 +23,241 @@
         "img": "/img/projects/gameplay_party.jpg"
     },
     {
-        "title": "gameplay party",
-        "description": "A site where you can rent a movie theater to game",
-        "date": "2018-10-10",
-        "group": 3,
+        "title": "multiversum",
+        "description": "A vr webshop school project",
+        "type": "school",
+        "date": "2018-06-26",
+        "group": 2,
         "skills": [
             "js",
             "html5",
-            "sass"
+            "sass",
+            "php"
         ],
         "buttons": [
             {
                 "type": "github",
-                "url": "https://github.com/leon-4A6C/gameplay_party"
+                "url": "https://github.com/Amin-4A6A/multiversum"
             },
             {
                 "type": "link",
-                "url": "https://gameplayparty.leonintveld.com/"
+                "url": "https://multiversum.leonintveld.com/"
             }
         ],
-        "img": "/img/projects/gameplay_party.jpg"
+        "img": "/img/projects/multiversum.jpg"
+    },
+    {
+        "title": "discusclubholland",
+        "description": "A website I made at my internship",
+        "type": "internship",
+        "date": "2017-11-23",
+        "group": 6,
+        "skills": [
+            "js",
+            "html5",
+            "css",
+            "php"
+        ],
+        "buttons": [
+            {
+                "type": "link",
+                "url": "http://discusclubholland.nl/"
+            }
+        ],
+        "img": "/img/projects/discusclubholland.jpg"
+    },
+    {
+        "title": "spotify downloader",
+        "description": "a 'tool' to download a spotify playlist",
+        "type": "personal",
+        "date": "2017-04-14",
+        "group": 1,
+        "skills": [
+            "js",
+            "node-js"
+        ],
+        "buttons": [
+            {
+                "type": "github",
+                "url": "https://github.com/leon-4A6C/spotifyDownloader"
+            }
+        ],
+        "img": "/img/projects/spotifyDownloader.png"
+    },
+    {
+        "title": "discord bot",
+        "description": "A discord bot that I made with nodejs and the discord.js library.",
+        "type": "personal",
+        "date": "2017-03-31",
+        "group": 1,
+        "skills": [
+            "js",
+            "node-js"
+        ],
+        "buttons": [
+            {
+                "type": "github",
+                "url": "https://github.com/leon-4A6C/discordBot"
+            }
+        ],
+        "img": "/img/projects/discordBot.png"
+    },
+    {
+        "title": "scroller",
+        "description": "smooth scroll library I made for my previous website.",
+        "type": "personal",
+        "date": "2017-03-31",
+        "group": 1,
+        "skills": [
+            "js",
+            "node-js"
+        ],
+        "buttons": [
+            {
+                "type": "github",
+                "url": "https://github.com/leon-4A6C/scroller"
+            }
+        ],
+        "img": "/img/projects/scroller.png"
+    },
+    {
+        "title": "message board",
+        "description": "A message site where you can write messages and post them to the site.",
+        "type": "personal",
+        "date": "2017-03-02",
+        "group": 1,
+        "skills": [
+            "js",
+            "json",
+            "php",
+            "SQL",
+            "html5",
+            "css3"
+        ],
+        "buttons": [
+            {
+                "type": "link",
+                "url": "projects/messageBoard/index.php"
+            }
+        ],
+        "img": "/img/projects/messageBoard.png"
+    },
+    {
+        "title": "login test",
+        "description": "A login page for nothing(just for fun).<br> You can create an account and login with it.<br>(passwords get hashed)",
+        "type": "personal",
+        "date": "2017-03-01",
+        "group": 1,
+        "skills": [
+            "php",
+            "SQL",
+            "html5",
+            "css3"
+        ],
+        "buttons": [
+            {
+                "type": "link",
+                "url": "projects/phpUserLogin/sqlPhpUsers.php"
+            }
+        ],
+        "img": "/img/projects/loginTest.png"
+    },
+    {
+        "title": "dj list",
+        "description": "A project from my school.<br> We had to collaborate with each other and make a website with multiple djs.",
+        "type": "school",
+        "date": "2017-02-08",
+        "group": 1,
+        "skills": [
+            "js",
+            "html5",
+            "css3"
+        ],
+        "buttons": [
+            {
+                "type": "github",
+                "url": "https://github.com/leon-4A6C/djLijst"
+            },
+            {
+                "type": "link",
+                "url": "projects/djLijst/index.html"
+            }
+        ],
+        "img": "/img/projects/djList.png"
+    },
+    {
+        "title": "yvonnescreaties",
+        "description": "A site I made for my mother.",
+        "type": "personal",
+        "date": "2017-01-20",
+        "group": 1,
+        "skills": [
+            "js",
+            "html5",
+            "css3"
+        ],
+        "buttons": [
+            {
+                "type": "link",
+                "url": "http://www.yvonnescreaties.nl/"
+            }
+        ],
+        "img": "/img/projects/yvonnescreaties.png"
+    },
+    {
+        "title": "test",
+        "description": "My school's test on javascript, it looks pretty bad but it works!",
+        "type": "school",
+        "date": "2016-12-21",
+        "group": 1,
+        "skills": [
+            "js",
+            "html5",
+            "css3"
+        ],
+        "buttons": [
+            {
+                "type": "link",
+                "url": "projects/toets/index.html"
+            }
+        ],
+        "img": "/img/projects/test.png"
+    },
+    {
+        "title": "twitter",
+        "description": "My school's test on javascript, it looks pretty bad but it works!",
+        "type": "school",
+        "date": "2016-12-08",
+        "group": 1,
+        "skills": [
+            "html5",
+            "css3"
+        ],
+        "buttons": [
+            {
+                "type": "link",
+                "url": "projects/twitterBox/index.html"
+            }
+        ],
+        "img": "/img/projects/twitterBoxes.png"
+    },
+    {
+        "title": "radiogaga",
+        "description": "A project from my school's book.",
+        "type": "school",
+        "date": "2016-10-24",
+        "group": 1,
+        "skills": [
+            "js",
+            "html5",
+            "css3"
+        ],
+        "buttons": [
+            {
+                "type": "link",
+                "url": "projects/RadioGaGa/index_webbouw26.html"
+            }
+        ],
+        "img": "/img/projects/radiogaga.png"
     }
 ]
