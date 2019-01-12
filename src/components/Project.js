@@ -42,6 +42,28 @@ const Description = styled.p`
 
 `
 
+const Buttons = styled.div`
+
+`
+const Button = styled.a`
+    display: inline-block;
+
+    border: 0.1em solid black;
+    border-radius: 0.2em;
+
+    font-size: 1.7rem;
+    color: black;
+
+    padding: 0.2em 1em;
+    margin-right: 1em;
+
+    transition: color 600ms, background 600ms;
+    &:hover {
+        color: white;
+        background: black;
+    }
+`
+
 export default class Project extends React.Component {
 
     state = {
@@ -59,6 +81,21 @@ export default class Project extends React.Component {
         this.setState({
             loaded: true
         })
+    }
+
+    buttonClass(type) {
+        let btnClass = "fa"
+        switch (type) {
+            case "github":
+                btnClass += "b fa-github"
+                break;
+        
+            default:
+                btnClass += "s fa-link"
+                break;
+        }
+
+        return btnClass;
     }
 
     render() {
@@ -91,9 +128,11 @@ export default class Project extends React.Component {
                                 <Description>
                                     {this.props.description}
                                 </Description>
+                                <Buttons>
+                                    {this.props.buttons.map((x, i) => <Button target="_blank" key={i} href={x.url}><i className={this.buttonClass(x.type)}/></Button>)}
+                                </Buttons>
                             </Info>
                         </Col>
-
                     </Row>
                 </ProjectWrapper>
             </InView>

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Form = styled.form`
     font-size: 1.4rem;
-    margin: 5em;
+    margin-top: 5em;
 `;
 
 const Input = styled.input`
