@@ -10,6 +10,10 @@ const LogoBox = styled.div`
     text-align: center;
     z-index: 100;
     padding: 2em;
+    display: none;
+    @media only screen and (min-width: 768px) {
+        display: block;
+    }
 `
 
 const H2 = styled.h2`
