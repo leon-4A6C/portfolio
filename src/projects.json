@@ -19,7 +19,7 @@
                 "url": "https://leonintveld.com/"
             }
         ],
-        "img": "/img/projects/portfolio_v2.png"
+        "img": "/img/projects/portfolio_v2.jpg"
     },
     {
         "title": "gameplay party",
@@ -104,7 +104,7 @@
                 "url": "https://github.com/leon-4A6C/spotifyDownloader"
             }
         ],
-        "img": "/img/projects/spotifyDownloader.png"
+        "img": "/img/projects/spotifyDownloader.jpg"
     },
     {
         "title": "discord bot",
@@ -122,7 +122,7 @@
                 "url": "https://github.com/leon-4A6C/discordBot"
             }
         ],
-        "img": "/img/projects/discordBot.png"
+        "img": "/img/projects/discordBot.jpg"
     },
     {
         "title": "portfolio v1",
@@ -141,7 +141,7 @@
                 "url": "https://v1.leonintveld.com/"
             }
         ],
-        "img": "/img/projects/portfolio_v1.png"
+        "img": "/img/projects/portfolio_v1.jpg"
     },
     {
         "title": "scroller",
@@ -158,7 +158,7 @@
                 "url": "https://github.com/leon-4A6C/scroller"
             }
         ],
-        "img": "/img/projects/scroller.png"
+        "img": "/img/projects/scroller.jpg"
     },
     {
         "title": "message board",
@@ -180,7 +180,7 @@
                 "url": "projects/messageBoard/index.php"
             }
         ],
-        "img": "/img/projects/messageBoard.png"
+        "img": "/img/projects/messageBoard.jpg"
     },
     {
         "title": "login",
@@ -200,7 +200,7 @@
                 "url": "projects/phpUserLogin/sqlPhpUsers.php"
             }
         ],
-        "img": "/img/projects/loginTest.png"
+        "img": "/img/projects/loginTest.jpg"
     },
     {
         "title": "dj list",
@@ -223,7 +223,7 @@
                 "url": "projects/djLijst/index.html"
             }
         ],
-        "img": "/img/projects/djList.png"
+        "img": "/img/projects/djList.jpg"
     },
     {
         "title": "yvonnescreaties",
@@ -242,7 +242,7 @@
                 "url": "http://www.yvonnescreaties.nl/"
             }
         ],
-        "img": "/img/projects/yvonnescreaties.png"
+        "img": "/img/projects/yvonnescreaties.jpg"
     },
     {
         "title": "js test",
@@ -261,7 +261,7 @@
                 "url": "projects/toets/index.html"
             }
         ],
-        "img": "/img/projects/test.png"
+        "img": "/img/projects/test.jpg"
     },
     {
         "title": "twitter",
@@ -279,7 +279,7 @@
                 "url": "projects/twitterBox/index.html"
             }
         ],
-        "img": "/img/projects/twitterBoxes.png"
+        "img": "/img/projects/twitterBoxes.jpg"
     },
     {
         "title": "radiogaga",
@@ -298,6 +298,6 @@
                 "url": "projects/RadioGaGa/index_webbouw26.html"
             }
         ],
-        "img": "/img/projects/radiogaga.png"
+        "img": "/img/projects/radiogaga.jpg"
     }
 ]
