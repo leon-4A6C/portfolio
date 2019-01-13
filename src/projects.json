@@ -11,12 +11,12 @@
         ],
         "buttons": [
             {
-                "type": "github",
-                "url": "https://github.com/leon-4A6C/portfolio"
-            },
-            {
                 "type": "link",
                 "url": "https://leonintveld.com/"
+            },
+            {
+                "type": "github",
+                "url": "https://github.com/leon-4A6C/portfolio"
             }
         ],
         "img": "/img/projects/portfolio_v2.jpg"
@@ -34,12 +34,12 @@
         ],
         "buttons": [
             {
-                "type": "github",
-                "url": "https://github.com/leon-4A6C/gameplay_party"
-            },
-            {
                 "type": "link",
                 "url": "https://gameplayparty.leonintveld.com/"
+            },
+            {
+                "type": "github",
+                "url": "https://github.com/leon-4A6C/gameplay_party"
             }
         ],
         "img": "/img/projects/gameplay_party.jpg"
@@ -58,12 +58,12 @@
         ],
         "buttons": [
             {
-                "type": "github",
-                "url": "https://github.com/Amin-4A6A/multiversum"
-            },
-            {
                 "type": "link",
                 "url": "https://multiversum.leonintveld.com/"
+            },
+            {
+                "type": "github",
+                "url": "https://github.com/Amin-4A6A/multiversum"
             }
         ],
         "img": "/img/projects/multiversum.jpg"
@@ -77,7 +77,7 @@
         "skills": [
             "js",
             "html5",
-            "css",
+            "css3",
             "php"
         ],
         "buttons": [
@@ -131,8 +131,8 @@
         "date": "2017-04-07",
         "group": 1,
         "skills": [
-            "html",
-            "css",
+            "html5",
+            "css3",
             "js"
         ],
         "buttons": [
@@ -168,9 +168,7 @@
         "group": 1,
         "skills": [
             "js",
-            "json",
             "php",
-            "SQL",
             "html5",
             "css3"
         ],
@@ -190,7 +188,7 @@
         "group": 1,
         "skills": [
             "php",
-            "SQL",
+            "database",
             "html5",
             "css3"
         ],
@@ -215,12 +213,12 @@
         ],
         "buttons": [
             {
-                "type": "github",
-                "url": "https://github.com/leon-4A6C/djLijst"
-            },
-            {
                 "type": "link",
                 "url": "projects/djLijst/index.html"
+            },
+            {
+                "type": "github",
+                "url": "https://github.com/leon-4A6C/djLijst"
             }
         ],
         "img": "/img/projects/djList.jpg"

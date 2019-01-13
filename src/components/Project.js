@@ -56,6 +56,7 @@ const Date = styled.small`
 `
 const InfoTitle = styled.h2`
     margin-bottom: 0;
+    margin-top: 0;
 `
 const Description = styled.p`
 
@@ -82,23 +83,30 @@ const Button = styled.a`
     }
 `
 
+const Icons = styled.div`
+    font-size: 1.3em;
+`
+const Icon = styled.i`
+    margin: 0 0.2em;
+`
+
+const Link = styled.a`
+    &, &:link,&:visited,&:hover,&:focus,&:active{
+        color: inherit;
+        text-decoration: none;
+    }
+`
+
 export default class Project extends React.Component {
 
     state = {
         inView: false,
-        loaded: false
     }
 
     onEnter = () => {
         this.setState({
             inView: true
         });
-    }
-
-    onLoad = () => {
-        this.setState({
-            loaded: true
-        })
     }
 
     buttonClass(type) {
@@ -118,11 +126,9 @@ export default class Project extends React.Component {
 
     render() {
         let {date} = this.props;
-        const { inView, loaded } = this.state;
-        const show = inView && loaded;
+        const { inView } = this.state;
 
         date = moment(date, "YYYY-MM-DD").fromNow();
-
 
         return (
             <InView onEnter={this.onEnter}>
@@ -131,18 +137,28 @@ export default class Project extends React.Component {
 
                         <Col xs={12} md={3}>
                             <ImgWrapper>
-                                <Img onLoad={this.onLoad} show={show} src={inView ? this.props.img : ""} alt={this.props.title} />
+                                <Link target="_blank" rel="noopener noreferrer" href={this.props.buttons.length>0? this.props.buttons[0].url:"/"}>
+                                    <Img show={inView} src={this.props.img} alt={this.props.title} />
+                                </Link>
                             </ImgWrapper>
                         </Col>
 
                         <Col>
-                            <Info show={show}>
-                                <InfoTitle>
-                                    {this.props.title}
-                                </InfoTitle>
+                            <Info show={inView}>
+                                <Link target="_blank" rel="noopener noreferrer" href={this.props.buttons.length>0? this.props.buttons[0].url:"/"}>
+                                    <InfoTitle>
+                                        {this.props.title}
+                                    </InfoTitle>
+                                </Link>
                                 <Date>
                                     {date}
                                 </Date>
+                                <Icons>
+                                    {this.props.group} <Icon className="fas fa-users" /> | 
+                                    {
+                                        this.props.skills.map((x, i) => <Icon key={i} className={"fab fa-" + x} />)
+                                    }
+                                </Icons>
                                 <Description>
                                     {this.props.description}
                                 </Description>
