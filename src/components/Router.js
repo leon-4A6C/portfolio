@@ -1,6 +1,5 @@
 import React from "react";
 import scrollTo from "../scrollTo";
-import { isMobile } from "react-device-detect";
 
 export default class Router extends React.Component {
 
@@ -31,9 +30,6 @@ export default class Router extends React.Component {
     }
 
     addListener() {
-        if(isMobile)
-            return
-
         window.addEventListener("scroll", this.handleScroll)
     }
 
