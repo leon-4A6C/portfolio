@@ -21,10 +21,17 @@ const Submit = styled.button`
     font-size: 1.2em;
     background: transparent;
     border: 0.1em solid black;
-    border-radius: 0.3em;
+    border-radius: 0.2em;
     color: black;
     margin-top: 1em;
     cursor: pointer;
+    padding: 0.2em;
+
+    transition: 600ms background, 600ms color;
+    &:hover {
+        background: black;
+        color: white;
+    }
 `
 
 export default Form;
