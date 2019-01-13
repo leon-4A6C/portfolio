@@ -1,5 +1,27 @@
 [
     {
+        "title": "portfolio",
+        "description": "this portfolio",
+        "type": "personal",
+        "date": "2019-01-13",
+        "group": 1,
+        "skills": [
+            "react",
+            "js"
+        ],
+        "buttons": [
+            {
+                "type": "github",
+                "url": "https://github.com/leon-4A6C/portfolio"
+            },
+            {
+                "type": "link",
+                "url": "https://leonintveld.com/"
+            }
+        ],
+        "img": "/img/projects/portfolio_v2.png"
+    },
+    {
         "title": "gameplay party",
         "description": "A site where you can rent a movie theater to game",
         "type": "school",
@@ -143,8 +165,8 @@
         "img": "/img/projects/messageBoard.png"
     },
     {
-        "title": "login test",
-        "description": "A login page for nothing(just for fun).<br> You can create an account and login with it.<br>(passwords get hashed)",
+        "title": "login",
+        "description": "A login page for nothing(just for fun). You can create an account and login with it.(passwords get hashed)",
         "type": "personal",
         "date": "2017-03-01",
         "group": 1,
@@ -164,7 +186,7 @@
     },
     {
         "title": "dj list",
-        "description": "A project from my school.<br> We had to collaborate with each other and make a website with multiple djs.",
+        "description": "A project from my school. We had to collaborate with each other and make a website with multiple djs.",
         "type": "school",
         "date": "2017-02-08",
         "group": 1,

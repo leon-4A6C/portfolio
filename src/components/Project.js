@@ -15,7 +15,7 @@ const ImgWrapper = styled.div`
     width: 100%;
 `
 const Img = styled.img`
-    ${({inView}) => !inView? css`
+    ${({show}) => !show? css`
         transform: rotateX(-60deg);
         opacity: 0;
     `: css`
@@ -31,6 +31,15 @@ const Img = styled.img`
 
 const Info = styled.div`
     margin-left: 2em;
+
+    transition: opacity 1000ms 300ms ease-in-out, transform 1000ms ease-in-out;
+    ${({show}) => !show? css`
+        opacity: 0;
+        transform: translateX(10em);
+    `: css`
+        opacity: 1;
+        transform: translateX(0);
+    `}
 `
 const Date = styled.small`
     
@@ -113,12 +122,12 @@ export default class Project extends React.Component {
 
                         <Col xs={12} md={3}>
                             <ImgWrapper>
-                                <Img onLoad={this.onLoad} inView={show} src={inView ? this.props.img : ""} alt={this.props.title} />
+                                <Img onLoad={this.onLoad} show={show} src={inView ? this.props.img : ""} alt={this.props.title} />
                             </ImgWrapper>
                         </Col>
 
                         <Col>
-                            <Info>
+                            <Info show={show}>
                                 <InfoTitle>
                                     {this.props.title}
                                 </InfoTitle>
