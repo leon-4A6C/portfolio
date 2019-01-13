@@ -1,6 +1,9 @@
 import React from "react"
 import styled, {css} from "styled-components"
 import Typist from "react-typist"
+import {
+    isMobile
+} from "react-device-detect"
 
 import Page from '../components/Page'
 import {Row, Col} from "../components/Grid"
@@ -9,21 +12,30 @@ import Container from "../components/Container"
 const H3 = styled.h3`
     padding-top: 2em;
     font-size: 2rem;
+    text-align: right;
+
+    @media screen and (min-width: 768px) {
+        text-align: initial;
+    }
 `
 const Description = styled.p`
     padding-top: 2em;
 `
 const HR = styled.hr`
-    width: 50%;
+    width: 100%;
     margin: 0;
+
+    @media screen and (min-width: 768px) {
+        width: 50%;
+    }
 `
 const ImgWrapper = styled.div`
     max-width: 512px;
     width: 100%;
     margin: 0 auto;
-    padding-top: 10em;
 
     @media only screen and (min-width: 768px) {
+        padding-top: 10em;
         width: 80%;
     }
 `
@@ -48,7 +60,8 @@ const StyledRow = styled(Row)`
 export default class AboutView extends React.Component {
 
     state = {
-        picChange: false,
+        picChange: isMobile,
+        active: false
     }
 
     onLineTyped = (line, lineIdx) => {
@@ -59,6 +72,60 @@ export default class AboutView extends React.Component {
         }
     }
 
+    aboutMeText = () => {
+        if(isMobile)
+            return(
+                <Description>
+                    This is me.<br/>
+                    My name is Leon in 't Veld.<br/><br/>
+                    Since I was a child I liked to tinker with stuff, taking things apart and trying to figure out how they work.
+                    When I got my first computer I liked to add mods and later make mods for minecraft.
+                    I kept doing stuff with software and decided I wanted to do this for the rest of my life.
+                    Now I'm a web developer student at ROCMN in Nieuwegein.<br/><br/>
+
+                    I also like to do some other stuff like making a 3d printer, making and flying drones, but most recently I started to play the guitar.
+                </Description>
+            )
+
+        if(!isMobile) {
+            if(this.state.active) {
+                return (
+                    <Typist onLineTyped={this.onLineTyped} cursor={{show: false}}>
+                        <Description>
+                            This is me.
+                            <Typist.Backspace count={11} delay={500} />
+                            Sorry this is my cat.
+                            <Typist.Backspace count={21} delay={500} />
+                            This is me.<br/>
+                            My name is Leon in 't Veld.<br/><br/>
+                            Since I was a child I liked to tinker with stuff, taking things apart and trying to figure out how they work.
+                            When I got my first computer I liked to add mods and later make mods for minecraft.
+                            I kept doing stuff with software and decided I wanted to do this for the rest of my life.
+                            Now I'm a web developer student at ROCMN in Nieuwegein.<br/><br/>
+
+                            I also like to do some other stuff like making a 3d printer, making and flying drones, but most recently I started to play the guitar.
+                        </Description>
+                    </Typist>
+                )
+            }
+            return;
+        }
+    }
+
+    componentDidUpdate() {
+        this.activate()
+    }
+    componentDidMount() {
+        this.activate()
+    }
+
+    activate() {
+        if(this.props.active && !this.state.active)
+            this.setState({
+                active: true
+            })
+    }
+
     render() {
         return (
             <Page>
@@ -66,7 +133,7 @@ export default class AboutView extends React.Component {
                     <StyledRow>
                         <Col xs={12} sm={6}>
                             <ImgWrapper>
-                                <Img show={this.props.active} src={!this.state.picChange ? "/img/poekie.jpg" : "http://placekitten.com/750/900"} />
+                                <Img show={this.state.active} src={!this.state.picChange ? "/img/poekie.jpg" : "/img/me.jpg"} />
                             </ImgWrapper>
                         </Col>
                         <Col xs={12} sm={6}>
@@ -75,28 +142,7 @@ export default class AboutView extends React.Component {
                             </H3>
                             <HR />
                             {
-                                this.props.active ?
-                                
-                                <Typist onLineTyped={this.onLineTyped} cursor={{show: false}}>
-                                    <Description>
-                                        This is me.
-                                        <Typist.Backspace count={11} delay={500} />
-                                        Sorry this is my cat.
-                                        <Typist.Backspace count={21} delay={500} />
-                                        This is me.<br/>
-                                        My name is Leon in 't Veld.<br/><br/>
-                                        Since I was a child I liked to tinker with stuff, taking things apart and trying to figure out how they work.
-                                        When I got my first computer I liked to add mods and later make mods for minecraft.
-                                        I kept doing stuff with software and decided I wanted to do this for the rest of my life.
-                                        Now I'm a web developer student at ROCMN in Nieuwegein.<br/><br/>
-
-                                        I also like to do some other stuff like making a 3d printer, making and flying drones, but most recently I started to play the guitar.
-                                    </Description>
-                                </Typist>
-
-                                :
-
-                                ""
+                                this.aboutMeText()
                             }
                         </Col>
                     </StyledRow>

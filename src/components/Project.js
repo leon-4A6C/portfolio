@@ -30,16 +30,26 @@ const Img = styled.img`
 `
 
 const Info = styled.div`
-    margin-left: 2em;
-
     transition: opacity 1000ms 300ms ease-in-out, transform 1000ms ease-in-out;
     ${({show}) => !show? css`
         opacity: 0;
-        transform: translateX(10em);
+        transform: translateY(-10em);
     `: css`
         opacity: 1;
-        transform: translateX(0);
+        transform: translateY(0);
     `}
+
+    @media only screen and (min-width: 768px) {
+        margin-left: 2em;
+
+        ${({show}) => !show? css`
+            opacity: 0;
+            transform: translateX(10em);
+        `: css`
+            opacity: 1;
+            transform: translateX(0);
+        `}
+    }
 `
 const Date = styled.small`
     
