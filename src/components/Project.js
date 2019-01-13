@@ -39,7 +39,7 @@ const Info = styled.div`
         transform: translateY(0);
     `}
 
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: ${({theme}) => theme.breakpoint.md}) {
         margin-left: 2em;
 
         ${({show}) => !show? css`

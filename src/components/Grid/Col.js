@@ -16,7 +16,7 @@ const Col = styled.div`
     `:""}
 
     ${({sm}) => sm ? css`
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: ${({theme}) => theme.breakpoint.sm}) {
         flex-basis: ${({sm}) => (ONE_TWELFTH * sm)}%;
         max-width: ${({sm}) => (ONE_TWELFTH * sm)}%;
         flex-grow: initial;
@@ -24,7 +24,7 @@ const Col = styled.div`
     `:""}
 
     ${({md}) => md ? css`
-    @media only screen and (min-width: 992px) {
+    @media only screen and (min-width: ${({theme}) => theme.breakpoint.md}) {
         flex-basis: ${({md}) => (ONE_TWELFTH * md)}%;
         max-width: ${({md}) => (ONE_TWELFTH * md)}%;
         flex-grow: initial;
@@ -32,7 +32,7 @@ const Col = styled.div`
     `:""}
 
     ${({lg}) => lg ? css`
-    @media only screen and (min-width: 1200px) {
+    @media only screen and (min-width: ${({theme}) => theme.breakpoint.lg}) {
         flex-basis: ${({lg}) => (ONE_TWELFTH * lg)}%;
         max-width: ${({lg}) => (ONE_TWELFTH * lg)}%;
         flex-grow: initial;

@@ -8,8 +8,10 @@ export default {
         primary: "'Raleway', sans-serif",
         secondary: "'Righteous', cursive",
     },
-    tags: {
-        html: "#2ecc71",
-        javascript: "#f1c40f"
+    breakpoint: {
+        xs: "0px",
+        sm: "768px",
+        md: "992px",
+        lg: "1200px"
     }
 }

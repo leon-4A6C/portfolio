@@ -1,8 +1,9 @@
 body {
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     margin: 0;
 }
 
 *, *::before, *::after {
     transition: color 600ms ease-in-out, background 600ms ease-in-out;
+    box-sizing: border-box;
 }

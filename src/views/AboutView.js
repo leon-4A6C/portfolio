@@ -12,9 +12,9 @@ import Container from "../components/Container"
 const H3 = styled.h3`
     padding-top: 2em;
     font-size: 2rem;
-    text-align: right;
+    text-align: center;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: ${({theme}) => theme.breakpoint.sm}) {
         text-align: initial;
     }
 `
@@ -25,7 +25,7 @@ const HR = styled.hr`
     width: 100%;
     margin: 0;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: ${({theme}) => theme.breakpoint.sm}) {
         width: 50%;
     }
 `
@@ -34,7 +34,7 @@ const ImgWrapper = styled.div`
     width: 100%;
     margin: 0 auto;
 
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: ${({theme}) => theme.breakpoint.sm}) {
         padding-top: 10em;
         width: 80%;
     }
@@ -52,7 +52,7 @@ const Img = styled.img`
 `
 
 const StyledRow = styled(Row)`
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: ${({theme}) => theme.breakpoint.sm}) {
         flex-direction: column-reverse;
     }
 `

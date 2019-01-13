@@ -4,13 +4,15 @@ const Container = styled.div`
     width: 95%;
     margin: 0 auto;
 
-    @media (min-width: 768px) {
+    padding-right: 2.5em;
+    @media (min-width: ${({theme}) => theme.breakpoint.sm}) {
         width: 90%;
+        padding-right: initial;
     }
-    @media (min-width: 992px) {
+    @media (min-width: ${({theme}) => theme.breakpoint.md}) {
         width: 85%;
     }
-    @media (min-width: 1200px) {
+    @media (min-width: ${({theme}) => theme.breakpoint.lg}) {
         width: 80%;
     }
 `;
