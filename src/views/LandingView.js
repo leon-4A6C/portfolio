@@ -32,6 +32,7 @@ const H1 = styled.h1`
   }
   @media only screen and (max-height: 800px) {
     margin: 0;
+    margin-top: 0.375em;
   }
 `
 

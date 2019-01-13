@@ -76,7 +76,6 @@ const Button = styled.a`
     padding: 0.2em 1em;
     margin-right: 1em;
 
-    transition: color 600ms, background 600ms;
     &:hover {
         color: white;
         background: black;
