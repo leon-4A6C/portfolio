@@ -125,14 +125,32 @@
         "img": "/img/projects/discordBot.png"
     },
     {
+        "title": "portfolio v1",
+        "description": "My previous portfolio",
+        "type": "personal",
+        "date": "2017-04-07",
+        "group": 1,
+        "skills": [
+            "html",
+            "css",
+            "js"
+        ],
+        "buttons": [
+            {
+                "type": "link",
+                "url": "https://v1.leonintveld.com/"
+            }
+        ],
+        "img": "/img/projects/portfolio_v1.png"
+    },
+    {
         "title": "scroller",
         "description": "smooth scroll library I made for my previous website.",
         "type": "personal",
         "date": "2017-03-31",
         "group": 1,
         "skills": [
-            "js",
-            "node-js"
+            "js"
         ],
         "buttons": [
             {

@@ -1,5 +1,6 @@
 import React from "react";
 import scrollTo from "../scrollTo";
+import {isMobile} from "react-device-detect"
 
 export default class Router extends React.Component {
 
@@ -14,7 +15,7 @@ export default class Router extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        if(this.props.match.params !== prevProps.match.params) {
+        if(this.props.match.params !== prevProps.match.params && (!this.props.location.state || !this.props.location.state.noScroll)) {
             this.scrollToPath()
         }
         const prev = this.props.pages.find(x => x.slug === prevProps.match.params.slug);
@@ -54,10 +55,18 @@ export default class Router extends React.Component {
         const currentPage = this.myRefs[this.props.match.params.slug];
         const rect = currentPage.current.getBoundingClientRect();
 
-        if(rect.top > 0) {
-            this.pageUp();
-        } else if((rect.bottom - window.innerHeight) < 0) {
-            this.pageDown();
+        if(!isMobile) {
+            if(rect.top > 0) {
+                this.pageUp();
+            } else if((rect.bottom - window.innerHeight) < 0) {
+                this.pageDown();
+            }
+        } else {
+            if((rect.top - window.innerHeight/2) > 0) {
+                this.pageUp();
+            } else if((rect.bottom - (window.innerHeight - window.innerHeight/2)) < 0) {
+                this.pageDown();
+            }
         }
 
     };
@@ -69,7 +78,12 @@ export default class Router extends React.Component {
             return
         
 
-        this.props.history.push(pages[current+1])
+        this.props.history.push({
+            pathname: pages[current+1],
+            state: {
+                noScroll: isMobile
+            }
+        })
     }
 
     pageUp = () => {
@@ -78,7 +92,12 @@ export default class Router extends React.Component {
         if(current === 0)
             return
 
-        this.props.history.push(pages[current-1])
+        this.props.history.push({
+            pathname: pages[current-1],
+            state: {
+                noScroll: isMobile
+            }
+        })
     }
 
     render() {
