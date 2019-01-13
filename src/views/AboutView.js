@@ -66,7 +66,7 @@ export default class AboutView extends React.Component {
                     <StyledRow>
                         <Col xs={12} sm={6}>
                             <ImgWrapper>
-                                <Img show={this.props.active} src={!this.state.picChange ? "http://placekitten.com/600/800" : "http://placekitten.com/750/900"} />
+                                <Img show={this.props.active} src={!this.state.picChange ? "/img/poekie.jpg" : "http://placekitten.com/750/900"} />
                             </ImgWrapper>
                         </Col>
                         <Col xs={12} sm={6}>
