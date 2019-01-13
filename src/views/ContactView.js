@@ -56,11 +56,11 @@ export default class ContactView extends React.Component {
                 <Container>
                     <Form onSubmit={this.submit}>
                         Hello my name is 
-                        <Input required onChange={(e) => this.setState({ name: e.target.value })} value={this.state.name}></Input>
+                        <Input name="name" required onChange={(e) => this.setState({ name: e.target.value })} value={this.state.name}></Input>
                         and I would like to contact you for this awesome project about
-                        <Input required onChange={(e) => this.setState({ project: e.target.value })} value={this.state.project}></Input>.
+                        <Input name="project" required onChange={(e) => this.setState({ project: e.target.value })} value={this.state.project}></Input>.
                         I would like your help, you can contact me with this email
-                        <Input required type="email" onChange={(e) => this.setState({ email: e.target.value })} value={this.state.email}></Input> or this phone number <Input required onChange={(e) => this.setState({ phone: e.target.value })} value={this.state.phone}></Input>.
+                        <Input name="email" required type="email" onChange={(e) => this.setState({ email: e.target.value })} value={this.state.email}></Input> or this phone number <Input name="phone" required onChange={(e) => this.setState({ phone: e.target.value })} value={this.state.phone}></Input>.
                         <br/>
                         <br/>
                         <br/>
