@@ -175,7 +175,7 @@
         "buttons": [
             {
                 "type": "link",
-                "url": "projects/messageBoard/index.php"
+                "url": "https://v1.leonintveld.com/projects/messageBoard/index.php"
             }
         ],
         "img": "/img/projects/messageBoard.jpg"
@@ -195,7 +195,7 @@
         "buttons": [
             {
                 "type": "link",
-                "url": "projects/phpUserLogin/sqlPhpUsers.php"
+                "url": "https://v1.leonintveld.com/projects/phpUserLogin/sqlPhpUsers.php"
             }
         ],
         "img": "/img/projects/loginTest.jpg"
@@ -214,7 +214,7 @@
         "buttons": [
             {
                 "type": "link",
-                "url": "projects/djLijst/index.html"
+                "url": "https://v1.leonintveld.com/projects/djLijst/index.html"
             },
             {
                 "type": "github",
@@ -256,7 +256,7 @@
         "buttons": [
             {
                 "type": "link",
-                "url": "projects/toets/index.html"
+                "url": "https://v1.leonintveld.com/projects/toets/index.html"
             }
         ],
         "img": "/img/projects/test.jpg"
@@ -274,7 +274,7 @@
         "buttons": [
             {
                 "type": "link",
-                "url": "projects/twitterBox/index.html"
+                "url": "https://v1.leonintveld.com/projects/twitterBox/index.html"
             }
         ],
         "img": "/img/projects/twitterBoxes.jpg"
@@ -293,7 +293,7 @@
         "buttons": [
             {
                 "type": "link",
-                "url": "projects/RadioGaGa/index_webbouw26.html"
+                "url": "https://v1.leonintveld.com/projects/RadioGaGa/index_webbouw26.html"
             }
         ],
         "img": "/img/projects/radiogaga.jpg"
