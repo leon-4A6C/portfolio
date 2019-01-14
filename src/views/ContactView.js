@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import ReCAPTCHA from "react-google-recaptcha";
 
 import Page from '../components/Page'
 import Form, { Input, Submit } from "../components/Form"
@@ -31,11 +32,23 @@ export default class ContactView extends React.Component {
         this.setState({
             sending: true
         })
+
+        this.formData = new FormData(e.target);
+        this.recaptchaRef.execute()
+    }
+    
+    captchaChange = (res) => {
+
+        if(!res)
+            return;
+
+        this.formData.append("g-recaptcha-response", res)
+
         fetch(
             "/sendmail.php",
             {
                 method: "POST",
-                body: new FormData(e.target)
+                body: this.formData
             }
         ).then(res => {
             if(res.ok) {
@@ -44,7 +57,9 @@ export default class ContactView extends React.Component {
                 this.setState({sending: false, send: false, error: true})
             }
         })
-        .catch(err => this.setState({error: true, sending: false, send: false}))
+        .catch(err => {
+            this.setState({error: true, sending: false, send: false})
+        })
     }
 
     render() {
@@ -65,7 +80,13 @@ export default class ContactView extends React.Component {
                         <br/>
                         <br/>
                         Hope to hear from you soon.
-                        <Submit>Send</Submit>
+                        <ReCAPTCHA
+                            ref={ref => this.recaptchaRef = ref}
+                            sitekey="6LcTuYkUAAAAALaFtFGiLM5XmM31j00299Sujceb"
+                            size="invisible"
+                            onChange={this.captchaChange}
+                        />
+                        <Submit disabled={this.state.sending || this.state.send}>Send</Submit>
                         {this.state.sending ? "message is sending...":""}
                         {this.state.send ? "message is send":""}
                         {this.state.error ? "Oh no something went wrong, try again.":""}
