@@ -32,7 +32,7 @@ export default class ContactView extends React.Component {
             sending: true
         })
         fetch(
-            "/sendmail",
+            "/sendmail.php",
             {
                 method: "POST",
                 body: new FormData(e.target)
